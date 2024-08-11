@@ -3,13 +3,13 @@
 
 #include <stack>
 #include <vector>
-#include <queue>
+#include <sstream>
 #include <algorithm>
 #include <unordered_set>
 #include <unordered_map>
 
 using namespace std;
 
-bool isValid(string s);
+string simplifyPath(string path);
 
 #endif

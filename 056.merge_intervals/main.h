@@ -3,13 +3,12 @@
 
 #include <stack>
 #include <vector>
-#include <queue>
 #include <algorithm>
 #include <unordered_set>
 #include <unordered_map>
 
 using namespace std;
 
-bool isValid(string s);
+vector<vector<int>> merge(vector<vector<int>>& intervals);
 
 #endif

@@ -3,13 +3,18 @@
 
 #include <stack>
 #include <vector>
-#include <queue>
 #include <algorithm>
 #include <unordered_set>
 #include <unordered_map>
 
 using namespace std;
 
-bool isValid(string s);
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
+bool hasCycle(ListNode *head);
 
 #endif
