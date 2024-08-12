@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 project(Test)
 
-set(SOURCE_DIR ./530.minimum_absolute_difference_in_BST)
+set(SOURCE_DIR ./066.plus_one)
 Set(PROJ_NAME  test)
 
 file(GLOB_RECURSE SOURCE "${SOURCE_DIR}/*.cpp")

@@ -7,26 +7,16 @@ using namespace std;
 
 namespace{
 
-TEST(isValid, normal) {
-  EXPECT_TRUE(isValid("d(sdf)d"));
-  EXPECT_TRUE(isValid("sdf(asdf)"));
-  EXPECT_TRUE(isValid("(s)[sdf]dsdf{sdf}"));
+TreeNode node1(4),node2(2),node3(6),node4(1),node5(3);
+
+TEST(getMinimumDifference, normal) {
+  node1.left = &node2;
+  node1.right = &node3;
+  node2.left = &node4;
+  node2.right = &node5;
+  EXPECT_EQ(1, getMinimumDifference(&node1));
 }
     
-TEST(isValid, unmatch) {
-  EXPECT_FALSE(isValid("]"));
-  EXPECT_FALSE(isValid("("));
-  EXPECT_FALSE(isValid("[()"));
-  EXPECT_FALSE(isValid("(){[]"));
-}
-
-TEST(isValid, nest) {
-  EXPECT_TRUE(isValid("asd{sdfg[sd(s[adg{sdfgr}e]f)sdf]sdfg}"));
-
-  EXPECT_FALSE(isValid("{asdf[(dfg})sdf]}"));
-  EXPECT_FALSE(isValid("sfh{sfh[sfd}fgh]sdfh"));
-  EXPECT_FALSE(isValid("adf(sfh[sdfh]{sfh)sdfh}sh"));
-}
 
 
 }

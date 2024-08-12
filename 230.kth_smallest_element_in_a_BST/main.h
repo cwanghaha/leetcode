@@ -19,6 +19,6 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-int getMinimumDifference(TreeNode* root);
+int kthSmallest(TreeNode* root, int k);
 
 #endif
