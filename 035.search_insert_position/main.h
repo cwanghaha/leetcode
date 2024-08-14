@@ -13,6 +13,6 @@
 
 using namespace std;
 
-bool isValid(string s);
+int searchInsert(vector<int>& nums, int target);
 
 #endif

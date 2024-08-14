@@ -10,6 +10,6 @@
 
 using namespace std;
 
-bool isValid(string s);
+int numIslands(vector<vector<char>>& grid);
 
 #endif

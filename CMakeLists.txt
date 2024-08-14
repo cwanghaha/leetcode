@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 project(Test)
 
-set(SOURCE_DIR ./066.plus_one)
+set(SOURCE_DIR ./108.convert_sorted_array_to_binary_search_tree)
 Set(PROJ_NAME  test)
 
 file(GLOB_RECURSE SOURCE "${SOURCE_DIR}/*.cpp")
@@ -17,7 +17,7 @@ include_directories("${SOURCE_DIR}")
 link_directories("./googleTest/lib/")
 
 set(CMAKE_C_FLAGS " -g")
-set(CMAKE_CXX_FLAGS " -g")
+set(CMAKE_CXX_FLAGS " -g -std=c++14")
 
 
 add_executable(${PROJ_NAME} ${SOURCE})

@@ -19,42 +19,20 @@ GTEST_API_ int main(int argc, char **argv)
 /*****************************************************************************/
 /*****************************************************************************/
 /*****************************************************************************/
-void eraseIslands(vector<vector<char>>& grid, int i, int j)
+int climbStairs(int n) 
 {
-    if((i<0)||(i>=grid.size())||(j<0)||(j>=grid[0].size())||('0' == grid[i][j]))
+    if((0 == n)||(1 == n))
     {
-        return;
+        return 1;
     }
 
-    grid[i][j] = '0';
-    eraseIslands(grid, i, j-1);
-    eraseIslands(grid, i, j+1);
-    eraseIslands(grid, i-1, j);
-    eraseIslands(grid, i+1, j);
-}
-
-int numIslands(vector<vector<char>>& grid)
-{
-    int m = grid.size();
-    int n = grid[0].size();
-    int islands = 0;
-
-    if((0 == m)||(0 == n))
+    int pre = 1, cur = 1;
+    for(int i=2;i<=n;i++)
     {
-        return 0;
+        int temp = cur;
+        cur = cur + pre;
+        pre = temp;
     }
-
-    for(int i=0;i<m;i++)
-    {
-        for(int j=0;j<n;j++)
-        {
-            if('1' == grid[i][j])
-            {
-                islands++;
-                eraseIslands(grid, i, j);
-            }
-        }
-    }
-
-    return islands;
+    
+    return cur;
 }

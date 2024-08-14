@@ -13,6 +13,6 @@
 
 using namespace std;
 
-bool isValid(string s);
+int climbStairs(int n) ;
 
 #endif

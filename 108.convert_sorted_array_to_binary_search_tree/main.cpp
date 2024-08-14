@@ -19,42 +19,29 @@ GTEST_API_ int main(int argc, char **argv)
 /*****************************************************************************/
 /*****************************************************************************/
 /*****************************************************************************/
-void eraseIslands(vector<vector<char>>& grid, int i, int j)
+TreeNode* findNode(vector<int>& nums, int l, int r)
 {
-    if((i<0)||(i>=grid.size())||(j<0)||(j>=grid[0].size())||('0' == grid[i][j]))
+    if(l > r)
     {
-        return;
+        return nullptr;
     }
 
-    grid[i][j] = '0';
-    eraseIslands(grid, i, j-1);
-    eraseIslands(grid, i, j+1);
-    eraseIslands(grid, i-1, j);
-    eraseIslands(grid, i+1, j);
+    int m = l +(r-l)/2;
+    TreeNode* node = new TreeNode(nums[m]);
+    node->left = findNode(nums, l, m-1);
+    node->right = findNode(nums, m+1, r);
+
+    return node;
 }
 
-int numIslands(vector<vector<char>>& grid)
+TreeNode* sortedArrayToBST(vector<int>& nums)
 {
-    int m = grid.size();
-    int n = grid[0].size();
-    int islands = 0;
-
-    if((0 == m)||(0 == n))
+    if(0 == nums.size())
     {
-        return 0;
+        return nullptr;
     }
 
-    for(int i=0;i<m;i++)
-    {
-        for(int j=0;j<n;j++)
-        {
-            if('1' == grid[i][j])
-            {
-                islands++;
-                eraseIslands(grid, i, j);
-            }
-        }
-    }
+    TreeNode *root = findNode(nums, 0, nums.size()-1);
 
-    return islands;
+    return root;
 }

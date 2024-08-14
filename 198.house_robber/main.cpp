@@ -19,42 +19,22 @@ GTEST_API_ int main(int argc, char **argv)
 /*****************************************************************************/
 /*****************************************************************************/
 /*****************************************************************************/
-void eraseIslands(vector<vector<char>>& grid, int i, int j)
+int rob(vector<int>& nums)
 {
-    if((i<0)||(i>=grid.size())||(j<0)||(j>=grid[0].size())||('0' == grid[i][j]))
+    int length = nums.size();
+    if(1 == length)
     {
-        return;
+        return nums[0];
     }
 
-    grid[i][j] = '0';
-    eraseIslands(grid, i, j-1);
-    eraseIslands(grid, i, j+1);
-    eraseIslands(grid, i-1, j);
-    eraseIslands(grid, i+1, j);
-}
-
-int numIslands(vector<vector<char>>& grid)
-{
-    int m = grid.size();
-    int n = grid[0].size();
-    int islands = 0;
-
-    if((0 == m)||(0 == n))
+    int pre = nums[0];
+    int cur = max(nums[0], nums[1]);
+    for(int i=2;i<length;i++)
     {
-        return 0;
+        int temp = cur;
+        cur = max(cur, pre+nums[i]);
+        pre = temp;
     }
 
-    for(int i=0;i<m;i++)
-    {
-        for(int j=0;j<n;j++)
-        {
-            if('1' == grid[i][j])
-            {
-                islands++;
-                eraseIslands(grid, i, j);
-            }
-        }
-    }
-
-    return islands;
+    return cur;
 }

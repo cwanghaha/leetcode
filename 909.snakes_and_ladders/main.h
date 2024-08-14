@@ -13,6 +13,6 @@
 
 using namespace std;
 
-bool isValid(string s);
+int snakesAndLadders(vector<vector<int>>& board);
 
 #endif

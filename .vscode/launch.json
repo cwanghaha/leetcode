@@ -1,11 +1,11 @@
 {
     "version": "0.2.0",
     "configurations": [
-                {
+        {
             "name": "(gdb) Attach",
             "type": "cppdbg",
             "request": "attach",
-            "program": "${workspaceFolder}./build/test.exe",
+            "program": "${workspaceFolder}/build/test.exe",
             "MIMode": "gdb",
             "miDebuggerPath": "/path/to/gdb",
             "setupCommands": [

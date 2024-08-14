@@ -19,42 +19,21 @@ GTEST_API_ int main(int argc, char **argv)
 /*****************************************************************************/
 /*****************************************************************************/
 /*****************************************************************************/
-void eraseIslands(vector<vector<char>>& grid, int i, int j)
+uint32_t reverseBits(uint32_t n)
 {
-    if((i<0)||(i>=grid.size())||(j<0)||(j>=grid[0].size())||('0' == grid[i][j]))
+    if((0 == n)||(0xffffffff == n))
     {
-        return;
+        return n;
     }
 
-    grid[i][j] = '0';
-    eraseIslands(grid, i, j-1);
-    eraseIslands(grid, i, j+1);
-    eraseIslands(grid, i-1, j);
-    eraseIslands(grid, i+1, j);
-}
+    uint32_t ret = 0;
 
-int numIslands(vector<vector<char>>& grid)
-{
-    int m = grid.size();
-    int n = grid[0].size();
-    int islands = 0;
-
-    if((0 == m)||(0 == n))
+    for(int i=0;i<32;i++)
     {
-        return 0;
+        ret<<=1;
+        ret |= n&0x1;
+        n>>=1;
     }
 
-    for(int i=0;i<m;i++)
-    {
-        for(int j=0;j<n;j++)
-        {
-            if('1' == grid[i][j])
-            {
-                islands++;
-                eraseIslands(grid, i, j);
-            }
-        }
-    }
-
-    return islands;
+    return ret;
 }

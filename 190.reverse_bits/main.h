@@ -13,6 +13,6 @@
 
 using namespace std;
 
-bool isValid(string s);
+uint32_t reverseBits(uint32_t n);
 
 #endif

@@ -13,6 +13,6 @@
 
 using namespace std;
 
-bool isValid(string s);
+bool searchMatrix(vector<vector<int>>& matrix, int target);
 
 #endif

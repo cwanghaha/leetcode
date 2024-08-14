@@ -19,42 +19,41 @@ GTEST_API_ int main(int argc, char **argv)
 /*****************************************************************************/
 /*****************************************************************************/
 /*****************************************************************************/
-void eraseIslands(vector<vector<char>>& grid, int i, int j)
+string addBinary(string a, string b)
 {
-    if((i<0)||(i>=grid.size())||(j<0)||(j>=grid[0].size())||('0' == grid[i][j]))
+    int i = a.length()-1;
+    int j = b.length()-1;
+    string ret;
+    int sum = 0;
+
+    for(;(i>=0)&&(j>=0);i--,j--)
     {
-        return;
+        sum += (a[i] - '0') + (b[j] - '0');
+        ret += to_string(sum%2);
+        sum /= 2;
     }
 
-    grid[i][j] = '0';
-    eraseIslands(grid, i, j-1);
-    eraseIslands(grid, i, j+1);
-    eraseIslands(grid, i-1, j);
-    eraseIslands(grid, i+1, j);
-}
-
-int numIslands(vector<vector<char>>& grid)
-{
-    int m = grid.size();
-    int n = grid[0].size();
-    int islands = 0;
-
-    if((0 == m)||(0 == n))
+    while(i>=0)
     {
-        return 0;
+        sum += a[i] - '0';
+        ret += to_string(sum%2);
+        sum /= 2;
+        i--;
     }
 
-    for(int i=0;i<m;i++)
+    while(j>=0)
     {
-        for(int j=0;j<n;j++)
-        {
-            if('1' == grid[i][j])
-            {
-                islands++;
-                eraseIslands(grid, i, j);
-            }
-        }
+        sum += b[j] - '0';
+        ret += to_string(sum%2);
+        sum /= 2;
+        j--;
     }
 
-    return islands;
+    if(1 == sum)
+    {
+        ret += to_string(sum);
+    }
+
+    reverse(ret.begin(), ret.end());
+    return  ret;
 }

@@ -13,6 +13,6 @@
 
 using namespace std;
 
-bool isValid(string s);
+int rob(vector<int>& nums);
 
 #endif

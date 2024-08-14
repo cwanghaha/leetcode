@@ -86,7 +86,8 @@
         "numbers": "cpp",
         "semaphore": "cpp",
         "cinttypes": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "bitset": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
