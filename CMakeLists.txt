@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 project(Test)
 
-set(SOURCE_DIR ./108.convert_sorted_array_to_binary_search_tree)
+set(SOURCE_DIR ./502.IPO)
 Set(PROJ_NAME  test)
 
 file(GLOB_RECURSE SOURCE "${SOURCE_DIR}/*.cpp")
