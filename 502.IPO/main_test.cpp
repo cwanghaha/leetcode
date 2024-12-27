@@ -7,25 +7,15 @@ using namespace std;
 
 namespace{
 
-TEST(isValid, normal) {
-  EXPECT_TRUE(isValid("d(sdf)d"));
-  EXPECT_TRUE(isValid("sdf(asdf)"));
-  EXPECT_TRUE(isValid("(s)[sdf]dsdf{sdf}"));
-}
-    
-TEST(isValid, unmatch) {
-  EXPECT_FALSE(isValid("]"));
-  EXPECT_FALSE(isValid("("));
-  EXPECT_FALSE(isValid("[()"));
-  EXPECT_FALSE(isValid("(){[]"));
-}
+vector<int> profits1 = {1,2,3};
+vector<int> capital1 = {0,1,1};
 
-TEST(isValid, nest) {
-  EXPECT_TRUE(isValid("asd{sdfg[sd(s[adg{sdfgr}e]f)sdf]sdfg}"));
+vector<int> profits2 = {1,2,3};
+vector<int> capital2 = {0,1,2};
 
-  EXPECT_FALSE(isValid("{asdf[(dfg})sdf]}"));
-  EXPECT_FALSE(isValid("sfh{sfh[sfd}fgh]sdfh"));
-  EXPECT_FALSE(isValid("adf(sfh[sdfh]{sfh)sdfh}sh"));
+TEST(findMaximizedCapital, normal) {
+  EXPECT_EQ(4, findMaximizedCapital(2, 0, profits1, capital1));
+  EXPECT_EQ(6, findMaximizedCapital(3, 0, profits2, capital2));
 }
 
 

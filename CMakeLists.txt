@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 project(Test)
 
-set(SOURCE_DIR ./502.IPO)
+set(SOURCE_DIR ./169.majority_element)
 Set(PROJ_NAME  test)
 
 file(GLOB_RECURSE SOURCE "${SOURCE_DIR}/*.cpp")
